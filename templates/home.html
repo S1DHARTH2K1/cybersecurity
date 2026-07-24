@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cybersecurity Journey</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<header class="site-header">
+    <div class="container">
+        <h1>CYBERSECURITY</h1>
+        <p class="subtitle">My Learning Journey</p>
+    </div>
+</header>
+<main class="container">
+    <section class="study-card">
+        <div class="topic-header">
+            <span class="topic-number">01</span>
+            <div>
+                <h2>Networking</h2>
+                <p>Day 1 of my cybersecurity learning journey</p>
+            </div>
+        </div>
+        <article class="lesson">
+            <h3>01. What is a Network?</h3>
+            <p>
+                A network is a group of devices such as computers, phones,
+                servers, and printers connected together so they can share
+                resources and communicate with each other.
+            </p>
+        </article>
+        <article class="lesson">
+            <h3>02. Types of Networks</h3>
+            <div class="network-types">
+                <div class="network-item">
+                    <h4>LAN</h4>
+                    <p>
+                        <strong>Local Area Network</strong> — A network
+                        covering a small area, such as a home, school,
+                        or office.
+                    </p>
+                </div>
+                <div class="network-item">
+                    <h4>WAN</h4>
+                    <p>
+                        <strong>Wide Area Network</strong> — A network
+                        covering a large geographical area, such as
+                        different cities or countries.
+                    </p>
+                </div>
+                <div class="network-item">
+                    <h4>MAN</h4>
+                    <p>
+                        <strong>Metropolitan Area Network</strong> —
+                        A network that generally covers a city or
+                        metropolitan area.
+                    </p>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <article class="lesson osi-section">
+        <h3>03. OSI Model (Open Systems Interconnection)</h3>
+        <p>
+            The OSI model is a conceptual framework created by ISO to standardize
+            how networks communicate. It divides the entire communication process
+            into seven layers. Each layer performs a specific function and
+            communicates with the layer above and below it.
+        </p>
+
+        <div class="osi-flow">
+            <h4>How Data Flows in the OSI Model</h4>
+            <p>
+                When data is sent from one device to another, it travels down
+                through the seven layers on the sender's side. Each layer adds
+                information required for communication. This process is called
+                encapsulation.
+            </p>
+        </div>
+
+        <div class="osi-layers">
+            <div class="osi-layer">
+                <span class="layer-number">L7</span>
+                <div class="layer-content">
+                    <h4>Application Layer</h4>
+                    <p>
+                        This is the layer closest to the end user. It provides
+                        network services to applications that communicate over
+                        a network.
+                    </p>
+                    <p>
+                        <strong>Example:</strong>
+                        Email applications such as Gmail or Outlook use network
+                        protocols to send and receive messages.
+                    </p>
+                    <p>
+                        <strong>Protocols:</strong>
+                        HTTP, SMTP, FTP, DNS
+                    </p>
+                    <p>
+                        <strong>Job:</strong>
+                        Provides network services to end-user applications.
+                    </p>
+                </div>
+            </div>
+            <div class="osi-layer">
+                <span class="layer-number">L6</span>
+                <div class="layer-content">
+                    <h4>Presentation Layer</h4>
+                    <p>
+                        Translates data into a format that both the sender and
+                        receiver can understand.
+                    </p>
+                    <p>
+                        <strong>Tasks:</strong>
+                        Encryption, compression, and data formatting.
+                    </p>
+                    <p>
+                        <strong>Example:</strong>
+                        Data can be formatted, compressed, or encrypted before
+                        being sent to the receiver.
+                    </p>
+                </div>
+            </div>
+            <div class="osi-layer">
+                <span class="layer-number">L5</span>
+                <div class="layer-content">
+                    <h4>Session Layer</h4>
+                    <p>
+                        Manages communication sessions between two devices.
+                        It establishes, maintains, and terminates sessions.
+                    </p>
+                    <p>
+                        It can also provide checkpoints that help a session
+                        resume from a previous point if communication is interrupted.
+                    </p>
+                </div>
+            </div>
+            <div class="osi-layer">
+                <span class="layer-number">L4</span>
+                <div class="layer-content">
+                    <h4>Transport Layer</h4>
+                    <p>
+                        Provides end-to-end delivery of data between devices.
+                        It determines how data should be transported.
+                    </p>
+                    <p>
+                        <strong>Protocols:</strong>
+                        TCP provides reliable communication, while UDP provides
+                        faster communication with less overhead.
+                    </p>
+                    <p>
+                        <strong>Responsibilities:</strong>
+                        Uses port numbers, breaks large data into smaller segments,
+                        and manages end-to-end communication.
+                    </p>
+                </div>
+            </div>
+            <div class="osi-layer">
+                <span class="layer-number">L3</span>
+                <div class="layer-content">
+                    <h4>Network Layer</h4>
+                    <p>
+                        Handles logical addressing and routing. It uses IP
+                        addresses to identify source and destination devices
+                        and determines how data should travel between networks.
+                    </p>
+                    <p>
+                        <strong>Address:</strong>
+                        IP address
+                    </p>
+                    <p>
+                        <strong>Device:</strong>
+                        Router
+                    </p>
+                </div>
+            </div>
+            <div class="osi-layer">
+                <span class="layer-number">L2</span>
+                <div class="layer-content">
+                    <h4>Data Link Layer</h4>
+                    <p>
+                        Handles physical addressing using MAC addresses.
+                        It organizes data into frames and performs error detection.
+                    </p>
+                    <p>
+                        <strong>Address:</strong>
+                        MAC address
+                    </p>
+                    <p>
+                        <strong>Devices:</strong>
+                        Switches and Network Interface Cards (NICs)
+                    </p>
+                </div>
+            </div>
+            <div class="osi-layer">
+                <span class="layer-number">L1</span>
+                <div class="layer-content">
+                    <h4>Physical Layer</h4>
+                    <p>
+                        The Physical Layer is responsible for transmitting raw
+                        bits through physical media.
+                    </p>
+                    <p>
+                        Data can be transmitted as electrical signals,
+                        light signals, or radio waves.
+                    </p>
+                    <p>
+                        <strong>Examples:</strong>
+                        Cables, connectors, radio signals, and physical network
+                        hardware.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="osi-flow receiving-side">
+            <h4>Receiving Side — Reverse Process</h4>
+            <p>
+                When the data reaches the receiving device, it travels upward
+                through the OSI layers. Each layer processes the information
+                intended for it and removes the corresponding header.
+                This reverse process is called de-encapsulation.
+            </p>
+        </div>
+    </article>
+
+    <article class="lesson tcp-section">
+        <h3>04. TCP/IP Model — The Practical Model</h3>
+        <p>
+            The TCP/IP model is the practical networking model used as the
+            foundation of communication on the Internet. It has four layers
+            and is simpler than the seven-layer OSI model.
+        </p>
+
+        <div class="tcp-highlight">
+            <h4>Why is it called the Practical Model?</h4>
+            <p>
+                TCP/IP focuses on how network communication actually works
+                in real-world networks and on the Internet. The model groups
+                some of the functions that are separated into different layers
+                in the OSI model.
+            </p>
+        </div>
+
+        <div class="tcp-table-wrapper">
+            <table class="tcp-table">
+                <thead>
+                    <tr>
+                        <th>TCP/IP Layer</th>
+                        <th>OSI Layers Covered</th>
+                        <th>Main Functions</th>
+                        <th>Protocols / Examples</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Application</strong></td>
+                        <td>5, 6, 7</td>
+                        <td>User applications and data formatting</td>
+                        <td>HTTP, HTTPS, SMTP, DNS, FTP</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Transport</strong></td>
+                        <td>4</td>
+                        <td>End-to-end communication and reliability</td>
+                        <td>TCP, UDP</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Internet</strong></td>
+                        <td>3</td>
+                        <td>Routing and logical addressing</td>
+                        <td>IP, ICMP, Routing Protocols</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Network Access</strong></td>
+                        <td>1 + 2</td>
+                        <td>Physical transmission and MAC addressing</td>
+                        <td>Ethernet, Wi-Fi, MAC Addresses</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="tcp-comparison">
+            <h4>Key Difference: TCP/IP vs OSI</h4>
+            <p>
+                The TCP/IP model is more practical and is used in real-world
+                networking and Internet communication. The OSI model is more
+                theoretical and is commonly used for understanding, learning,
+                and teaching how network communication works.
+            </p>
+        </div>
+    </article>
+
+    <!-- NEW INTERACTIVE MAPPER SECTION -->
+    <article class="lesson interactive-section">
+        <h3>05. Interactive Layer Mapper</h3>
+        <p>Hover over any layer to see how the two models map to each other and view the protocols.</p>
+        
+        <div class="mapper-container">
+            <!-- OSI Model Stack -->
+            <div class="model-stack osi-stack">
+                <h4>OSI Model</h4>
+                <div class="layer" data-map="app">7. Application</div>
+                <div class="layer" data-map="app">6. Presentation</div>
+                <div class="layer" data-map="app">5. Session</div>
+                <div class="layer" data-map="transport">4. Transport</div>
+                <div class="layer" data-map="internet">3. Network</div>
+                <div class="layer" data-map="network">2. Data Link</div>
+                <div class="layer" data-map="network">1. Physical</div>
+            </div>
+
+            <!-- TCP/IP Model Stack -->
+            <div class="model-stack tcp-stack">
+                <h4>TCP/IP Model</h4>
+                <div class="layer tcp-app" data-map="app">Application</div>
+                <div class="layer tcp-transport" data-map="transport">Transport</div>
+                <div class="layer tcp-internet" data-map="internet">Internet</div>
+                <div class="layer tcp-network" data-map="network">Network Access</div>
+            </div>
+        </div>
+
+        <!-- Info Box for Hover Details -->
+        <div class="layer-info" id="layer-info">
+            <h4 id="info-title">Hover over a layer</h4>
+            <p id="info-desc">Select a layer from either model above to see its functions and protocols here.</p>
+            <p><strong>Protocols:</strong> <span id="info-proto">...</span></p>
+        </div>
+    </article>
+
+    <!-- REAL WORLD EXAMPLE SECTION -->
+    <article class="lesson example-section">
+        <h3>06. Real-World Example & Security Context</h3>
+        <p>Let's look at how the layers work together when you perform an everyday action, and why attackers target specific layers.</p>
+        
+        <div class="flow-example">
+            <h4>🌐 What happens when you open google.com?</h4>
+            <ol class="step-list">
+                <li><strong>Application Layer:</strong> You type <em>google.com</em> in your browser. A DNS request resolves the name to an IP address, and your browser initiates an HTTPS request.</li>
+                <li><strong>Transport Layer:</strong> TCP creates a reliable connection to Google's server using a 3-way handshake (SYN, SYN-ACK, ACK) over port 443.</li>
+                <li><strong>Internet Layer:</strong> The protocol encapsulates the data into packets, adding your IP (source) and Google's IP (destination), deciding the best routing path.</li>
+                <li><strong>Network Access Layer (Data Link):</strong> MAC addresses are added for local delivery to your home router.</li>
+                <li><strong>Network Access Layer (Physical):</strong> Everything is converted into raw electrical or radio signals and blasted over your Wi-Fi or ethernet cable.</li>
+                <li><em>Once the data reaches Google's server, the exact reverse process (decapsulation) happens!</em></li>
+            </ol>
+        </div>
+
+        <div class="cyber-context">
+            <h4>🛡️ Why These Models Matter in Cybersecurity</h4>
+            <p>Hackers design attacks targeting specific layers. Security professionals deploy defenses (like firewalls) at specific layers to stop them.</p>
+            <ul class="threat-list">
+                <li><strong>Layer 1/2 (Physical/Data Link):</strong> MAC Spoofing, ARP Poisoning, physical wiretapping.</li>
+                <li><strong>Layer 3 (Network):</strong> IP Spoofing, ICMP Floods (Ping of Death). <em>Standard firewalls filter traffic here.</em></li>
+                <li><strong>Layer 4 (Transport):</strong> TCP SYN Floods (DoS attacks), Port Scanning.</li>
+                <li><strong>Layer 7 (Application):</strong> SQL Injection, Cross-Site Scripting (XSS), phishing. <em>Web Application Firewalls (WAF) operate here.</em></li>
+            </ul>
+        </div>
+    </article>
+
+    <!-- PROTOCOL QUICK REFERENCE NOTE -->
+    <article class="lesson note-section">
+        <div class="protocol-note">
+            <div class="note-header">
+                <h4>📝 Quick Protocol Reference Note</h4>
+                <span class="note-disclaimer">(Detailed deep-dives into these will be given in later chapters)</span>
+            </div>
+            
+            <div class="protocol-grid">
+                <div class="proto-card">
+                    <h5>HTTP / HTTPS</h5>
+                    <p>The foundation of data communication on the web. HTTP is plaintext, while HTTPS uses encryption to keep your browsing secure.</p>
+                </div>
+                <div class="proto-card">
+                    <h5>DNS (Domain Name System)</h5>
+                    <p>The "phonebook" of the internet. It translates human-readable domain names (like google.com) into machine-readable IP addresses.</p>
+                </div>
+                <div class="proto-card">
+                    <h5>FTP (File Transfer Protocol)</h5>
+                    <p>A standard network protocol used to transfer computer files between a client and a server on a computer network.</p>
+                </div>
+                <div class="proto-card">
+                    <h5>TCP (Transmission Control Protocol)</h5>
+                    <p>Provides reliable, ordered, and error-checked delivery of data. It guarantees your data arrives intact (used for web browsing and emails).</p>
+                </div>
+                <div class="proto-card">
+                    <h5>UDP (User Datagram Protocol)</h5>
+                    <p>Provides fast, connectionless delivery without checking for errors. If a packet drops, it drops (used for live video streaming and gaming).</p>
+                </div>
+                <div class="proto-card">
+                    <h5>IPv4 / IPv6</h5>
+                    <p>The principal protocols for routing data across network boundaries. IPv4 uses 32-bit addresses, while IPv6 uses 128-bit to solve address exhaustion.</p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+</main>
+
+<!-- JAVASCRIPT FOR THE INTERACTIVE MAPPER -->
+<script>
+    const layers = document.querySelectorAll('.layer');
+    const infoTitle = document.getElementById('info-title');
+    const infoDesc = document.getElementById('info-desc');
+    const infoProto = document.getElementById('info-proto');
+
+    const layerData = {
+        'app': {
+            title: 'Application Level (OSI 5,6,7 & TCP App)',
+            desc: 'Provides network services to apps, handles encryption, formatting, and maintains communication sessions.',
+            proto: 'HTTP, HTTPS, FTP, DNS, SMTP'
+        },
+        'transport': {
+            title: 'Transport Level (OSI 4 & TCP Transport)',
+            desc: 'Provides end-to-end delivery, handles error recovery, and breaks data into segments using port numbers.',
+            proto: 'TCP, UDP'
+        },
+        'internet': {
+            title: 'Network/Internet Level (OSI 3 & TCP Internet)',
+            desc: 'Handles logical addressing and routing. Determines the best path for data across the internet.',
+            proto: 'IPv4, IPv6, ICMP'
+        },
+        'network': {
+            title: 'Data Link & Physical (OSI 1,2 & TCP Network Access)',
+            desc: 'Handles physical MAC addressing, turns data into frames, and transmits raw electrical/light signals over cables.',
+            proto: 'Ethernet, Wi-Fi (802.11), MAC Addresses'
+        }
+    };
+
+    layers.forEach(layer => {
+        layer.addEventListener('mouseenter', () => {
+            const mapKey = layer.getAttribute('data-map');
+            
+            document.querySelectorAll('.layer').forEach(l => l.classList.remove('active'));
+            document.querySelectorAll(`.layer[data-map="${mapKey}"]`).forEach(l => l.classList.add('active'));
+            
+            infoTitle.textContent = layerData[mapKey].title;
+            infoDesc.textContent = layerData[mapKey].desc;
+            infoProto.textContent = layerData[mapKey].proto;
+        });
+
+        layer.addEventListener('mouseleave', () => {
+            document.querySelectorAll('.layer').forEach(l => l.classList.remove('active'));
+            infoTitle.textContent = 'Hover over a layer';
+            infoDesc.textContent = 'Select a layer from either model above to see its functions and protocols here.';
+            infoProto.textContent = '...';
+        });
+    });
+</script>
+
+</body>
+</html>
