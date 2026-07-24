@@ -397,6 +397,406 @@
         </div>
     </article>
 
+    <!-- OSI ENCAPSULATION SIMULATOR -->
+<article class="lesson encapsulation-section">
+    <h3>07. Interactive OSI Encapsulation Simulator</h3>
+
+    <p>
+        Enter a message and step through the OSI layers to see how data is
+        encapsulated as it moves from the Application Layer down to the
+        Physical Layer.
+    </p>
+
+    <div class="encapsulation-container">
+
+        <!-- Controls -->
+        <div class="encap-controls">
+            <input
+                type="text"
+                id="encapMessageInput"
+                placeholder="Type a message (e.g., hello)"
+            >
+
+            <button id="encapStepBtn">
+                Start Encapsulation
+            </button>
+
+            <button id="encapResetBtn">
+                Reset
+            </button>
+        </div>
+
+        <!-- Simulator -->
+        <div class="encap-split-view">
+
+            <!-- Left: OSI Layers -->
+            <div class="encap-layers">
+
+                <h4>OSI Layers</h4>
+
+                <div class="encap-layer" id="encap-layer-7">
+                    <span>L7</span>
+                    Application
+                </div>
+
+                <div class="encap-layer" id="encap-layer-6">
+                    <span>L6</span>
+                    Presentation
+                </div>
+
+                <div class="encap-layer" id="encap-layer-5">
+                    <span>L5</span>
+                    Session
+                </div>
+
+                <div class="encap-layer" id="encap-layer-4">
+                    <span>L4</span>
+                    Transport
+                </div>
+
+                <div class="encap-layer" id="encap-layer-3">
+                    <span>L3</span>
+                    Network
+                </div>
+
+                <div class="encap-layer" id="encap-layer-2">
+                    <span>L2</span>
+                    Data Link
+                </div>
+
+                <div class="encap-layer" id="encap-layer-1">
+                    <span>L1</span>
+                    Physical
+                </div>
+
+            </div>
+
+            <!-- Right: Packet -->
+            <div class="encap-data-view">
+
+                <h4>Current Encapsulated Data</h4>
+
+                <div class="encap-layer-description" id="encapLayerDescription">
+                    Start the simulator to see how each OSI layer processes
+                    the data.
+                </div>
+
+                <div id="encapPacketDisplay">
+                    Awaiting data...
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</article>
+<article class="lesson ip-section">
+
+```
+<h3>IP Addressing & Subnetting</h3>
+
+<p>
+    Understanding IP addresses and subnetting is essential for networking
+    and cybersecurity. IP addresses help identify devices on a network,
+    while subnetting allows large networks to be divided into smaller,
+    more manageable networks.
+</p>
+
+
+<div class="ip-topic">
+
+    <h4>What is an IP Address?</h4>
+
+    <p>
+        An <strong>IP Address</strong> is like a postal address for your
+        device on a network. It helps identify a device and allows data
+        to be delivered to the correct destination.
+    </p>
+
+    <p>
+        There are two main versions of IP addresses:
+    </p>
+
+    <div class="ip-types">
+
+        <div class="ip-card">
+            <h5>IPv4</h5>
+
+            <p>
+                IPv4 is the most commonly used version of IP addressing.
+                It uses 32-bit addresses written as four numbers separated
+                by dots.
+            </p>
+
+            <code>192.168.1.10</code>
+        </div>
+
+
+        <div class="ip-card">
+            <h5>IPv6</h5>
+
+            <p>
+                IPv6 is the newer version of IP addressing. It uses
+                128-bit addresses and was developed to provide a much
+                larger number of available addresses.
+            </p>
+
+            <code>2001:db8::ff00:42:8329</code>
+        </div>
+
+    </div>
+
+    <div class="ip-highlight">
+
+        <h5>IPv4 Format</h5>
+
+        <p>
+            An IPv4 address contains four numbers called octets.
+            Each octet can have a value from 0 to 255.
+        </p>
+
+        <code>192.168.1.100</code>
+
+    </div>
+
+</div>
+
+
+<div class="ip-topic">
+
+    <h4>Types of IP Addresses</h4>
+
+    <div class="ip-types">
+
+        <div class="ip-card">
+
+            <h5>Private IP Address</h5>
+
+            <p>
+                Private IP addresses are used inside local networks,
+                such as home, school, and office networks. They are
+                not directly accessible from the public internet.
+            </p>
+
+            <code>192.168.x.x</code>
+            <br>
+            <code>10.x.x.x</code>
+
+        </div>
+
+
+        <div class="ip-card">
+
+            <h5>Public IP Address</h5>
+
+            <p>
+                A public IP address is assigned to a network by an
+                Internet Service Provider. It is used for communication
+                over the public internet.
+            </p>
+
+            <code>Example: ISP Assigned Address</code>
+
+        </div>
+
+
+        <div class="ip-card">
+
+            <h5>Loopback Address</h5>
+
+            <p>
+                A loopback address is used to test network communication
+                on the same device. The most commonly used IPv4 loopback
+                address is 127.0.0.1.
+            </p>
+
+            <code>127.0.0.1</code>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="ip-topic">
+
+    <h4>Subnet Mask</h4>
+
+    <p>
+        A subnet mask tells the network which part of an IP address
+        represents the network and which part represents the host,
+        or individual device.
+    </p>
+
+    <div class="ip-highlight">
+
+        <h5>Common Subnet Mask</h5>
+
+        <code>255.255.255.0</code>
+
+        <span class="ip-divider">or</span>
+
+        <code>/24</code>
+
+    </div>
+
+
+    <div class="subnet-example">
+
+        <h5>Example</h5>
+
+        <p>
+            Consider the following IP address:
+        </p>
+
+        <code>192.168.1.50</code>
+
+        <p>
+            The subnet mask is:
+        </p>
+
+        <code>255.255.255.0</code>
+
+        <p>
+            With a /24 subnet, the first three octets represent
+            the network portion, while the last octet represents
+            the host portion.
+        </p>
+
+        <div class="address-breakdown">
+
+            <div>
+                <span class="network-part">
+                    192.168.1
+                </span>
+
+                <span class="host-part">
+                    .50
+                </span>
+            </div>
+
+            <p>
+                Network Part: <strong>192.168.1</strong>
+            </p>
+
+            <p>
+                Host Part: <strong>50</strong>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="ip-topic">
+
+    <h4>Why is Subnetting Used?</h4>
+
+    <p>
+        Subnetting divides a large network into smaller networks.
+        This makes networks easier to manage and can improve
+        security and network organization.
+    </p>
+
+    <div class="subnet-benefits">
+
+        <div class="benefit-card">
+
+            <h5>Better Security</h5>
+
+            <p>
+                Different departments or systems can be placed into
+                separate networks, helping control communication
+                between them.
+            </p>
+
+        </div>
+
+
+        <div class="benefit-card">
+
+            <h5>Better Management</h5>
+
+            <p>
+                Smaller networks are easier for network administrators
+                to monitor, troubleshoot, and manage.
+            </p>
+
+        </div>
+
+
+        <div class="benefit-card">
+
+            <h5>Efficient IP Usage</h5>
+
+            <p>
+                Subnetting allows organizations to divide available
+                IP address space according to their requirements.
+            </p>
+
+        </div>
+
+
+        <div class="benefit-card">
+
+            <h5>Access Control</h5>
+
+            <p>
+                Subnets can be used with firewalls and access control
+                rules to control communication between different
+                parts of a network.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="ip-topic">
+
+    <h4>Simple Subnetting Example</h4>
+
+    <p>
+        Imagine a company has a large network. The company can divide
+        the network into smaller networks for different departments.
+    </p>
+
+    <div class="subnet-example">
+
+        <p>
+            <strong>Human Resources</strong>
+        </p>
+
+        <code>192.168.1.0/24</code>
+
+        <p>
+            <strong>Information Technology</strong>
+        </p>
+
+        <code>192.168.2.0/24</code>
+
+    </div>
+
+    <p>
+        By separating departments into different subnets, the company
+        can manage network traffic more effectively and apply different
+        security and access control policies to each department.
+    </p>
+
+</div>
+
+
+</article>
+
+
+
+
 </main>
 
 <!-- JAVASCRIPT FOR THE INTERACTIVE MAPPER -->
@@ -448,6 +848,834 @@
             infoProto.textContent = '...';
         });
     });
+
+    /* =========================================
+   OSI ENCAPSULATION SIMULATOR
+========================================= */
+
+// =========================================
+// CORE STATE
+// =========================================
+
+let encapCurrentLayer = 7;
+let encapCurrentPayload = "";
+let encapIsProcessing = false;
+
+
+// =========================================
+// DOM ELEMENTS
+// =========================================
+
+const encapMessageInput =
+    document.getElementById('encapMessageInput');
+
+const encapStepBtn =
+    document.getElementById('encapStepBtn');
+
+const encapResetBtn =
+    document.getElementById('encapResetBtn');
+
+const encapPacketDisplay =
+    document.getElementById('encapPacketDisplay');
+
+const encapLayerDescription =
+    document.getElementById('encapLayerDescription');
+
+
+// =========================================
+// CAESAR SUBSTITUTION CIPHER
+// =========================================
+
+function encryptSubstitution(text, shift) {
+
+    return text.split('').map(char => {
+
+        if (char.match(/[a-z]/i)) {
+
+            const charCode = char.charCodeAt(0);
+
+            const base =
+                (charCode >= 65 && charCode <= 90)
+                    ? 65
+                    : 97;
+
+            return String.fromCharCode(
+                ((charCode - base + shift) % 26) + base
+            );
+
+        }
+
+        return char;
+
+    }).join('');
+}
+
+
+// =========================================
+// SHOW CAESAR CIPHER STEPS
+// =========================================
+
+function getCaesarSteps(text, shift) {
+
+    let steps = [];
+
+    for (let char of text) {
+
+        if (char.match(/[a-z]/i)) {
+
+            const charCode = char.charCodeAt(0);
+
+            const base =
+                (charCode >= 65 && charCode <= 90)
+                    ? 65
+                    : 97;
+
+            const newChar =
+                String.fromCharCode(
+                    ((charCode - base + shift) % 26) + base
+                );
+
+            steps.push(`${char} → ${newChar}`);
+
+        } else {
+
+            steps.push(`${char} → ${char}`);
+
+        }
+
+    }
+
+    return steps.join(" &nbsp;&nbsp; ");
+}
+
+
+// =========================================
+// LAYER INFORMATION
+// =========================================
+
+const encapLayerInfo = {
+
+    7: {
+
+        name: "L7 — Application Layer",
+
+        what:
+            "The application creates the original message that the user wants to send.",
+
+        how:
+            "The user enters a message into the input box. In this simulation, the message is simply passed to the next layer without modification.",
+
+        example:
+            "User enters: hello"
+
+    },
+
+
+    6: {
+
+        name: "L6 — Presentation Layer",
+
+        what:
+            "The data is transformed using a simple substitution cipher to demonstrate encryption.",
+
+        how:
+            "We use a Caesar substitution cipher with a shift of +3. Every alphabetic character moves three positions forward in the alphabet.",
+
+        example:
+            "hello → khoor"
+
+    },
+
+
+    5: {
+
+        name: "L5 — Session Layer",
+
+        what:
+            "A session identifier is added to represent the communication session between the two devices.",
+
+        how:
+            "The simulator adds a session ID before the existing data.",
+
+        example:
+            "[SessionID:9942] khoor"
+
+    },
+
+
+    4: {
+
+        name: "L4 — Transport Layer",
+
+        what:
+            "The Transport Layer identifies the applications involved in the communication using port numbers.",
+
+        how:
+            "The simulator adds a TCP header containing a source port and destination port.",
+
+        example:
+            "Source Port: 54321\nDestination Port: 443"
+
+    },
+
+
+    3: {
+
+        name: "L3 — Network Layer",
+
+        what:
+            "The Network Layer adds logical addresses so the packet can be routed from the source device to the destination device.",
+
+        how:
+            "The simulator adds a source IP address and destination IP address.",
+
+        example:
+            "Source IP: 192.168.1.5\nDestination IP: 104.21.73.112"
+
+    },
+
+
+    2: {
+
+        name: "L2 — Data Link Layer",
+
+        what:
+            "The Data Link Layer prepares the data for delivery across the local network.",
+
+        how:
+            "The simulator adds source and destination MAC addresses. It also adds an FCS field to represent error detection.",
+
+        example:
+            "Source MAC: 00:1A:2B...\nDestination MAC: F8:4D:89...\nFCS: Added"
+
+    },
+
+
+    1: {
+
+        name: "L1 — Physical Layer",
+
+        what:
+            "The Physical Layer represents the transmission of data as raw bits.",
+
+        how:
+            "The simulator converts every character into its 8-bit binary representation using its character code.",
+
+        example:
+            "A character is converted into binary bits."
+
+    }
+
+};
+
+
+// =========================================
+// GET SIMULATOR LAYERS
+// =========================================
+
+function getEncapLayers() {
+
+    return document.querySelectorAll('.encap-layer');
+
+}
+
+
+// =========================================
+// HIGHLIGHT CURRENT LAYER
+// =========================================
+
+function highlightEncapLayer(layerNumber) {
+
+    getEncapLayers().forEach(layer => {
+
+        layer.classList.remove('encap-active');
+
+    });
+
+
+    const currentElement =
+        document.getElementById(
+            `encap-layer-${layerNumber}`
+        );
+
+
+    if (currentElement) {
+
+        currentElement.classList.add(
+            'encap-active'
+        );
+
+    }
+
+}
+
+
+// =========================================
+// PROCESS EACH OSI LAYER
+// =========================================
+
+function processEncapsulationLayer(
+    layer,
+    data
+) {
+
+    switch (layer) {
+
+
+        // =====================================
+        // L7 APPLICATION
+        // =====================================
+
+        case 7:
+
+            return {
+
+                payload: data,
+
+                explanation: `
+                    <strong>L7 — Application Layer</strong>
+
+                    <br><br>
+
+                    <strong>What happened?</strong>
+
+                    <br>
+
+                    The user created the original message.
+
+                    <br><br>
+
+                    <strong>How?</strong>
+
+                    <br>
+
+                    The message entered by the user is passed
+                    to the next OSI layer.
+
+                    <br><br>
+
+                    <strong>Original Data:</strong>
+
+                    <br>
+
+                    ${data}
+                `
+
+            };
+
+
+        // =====================================
+        // L6 PRESENTATION
+        // =====================================
+
+        case 6:
+
+            const encrypted =
+                encryptSubstitution(data, 3);
+
+            const substitutionSteps =
+                getCaesarSteps(data, 3);
+
+            return {
+
+                payload: encrypted,
+
+                explanation: `
+                    <strong>L6 — Presentation Layer</strong>
+
+                    <br><br>
+
+                    <strong>What happened?</strong>
+
+                    <br>
+
+                    The data was encrypted using a
+                    simple Caesar substitution cipher.
+
+                    <br><br>
+
+                    <strong>How?</strong>
+
+                    <br>
+
+                    Each alphabetic character was shifted
+                    3 positions forward.
+
+                    <br><br>
+
+                    <strong>Character Conversion:</strong>
+
+                    <br>
+
+                    ${substitutionSteps}
+
+                    <br><br>
+
+                    <strong>Before:</strong>
+                    ${data}
+
+                    <br>
+
+                    <strong>After:</strong>
+                    ${encrypted}
+
+                    <br><br>
+
+                    <small>
+                    Note: This is only a learning demonstration.
+                    Caesar cipher is NOT secure encryption.
+                    </small>
+                `
+
+            };
+
+
+        // =====================================
+        // L5 SESSION
+        // =====================================
+
+        case 5:
+
+            const sessionData =
+                `[SessionID:9942] ${data}`;
+
+            return {
+
+                payload: sessionData,
+
+                explanation: `
+                    <strong>L5 — Session Layer</strong>
+
+                    <br><br>
+
+                    <strong>What happened?</strong>
+
+                    <br>
+
+                    A session identifier was added
+                    to represent the communication session.
+
+                    <br><br>
+
+                    <strong>How?</strong>
+
+                    <br>
+
+                    The simulator adds a unique session ID
+                    before the existing data.
+
+                    <br><br>
+
+                    <strong>Session ID:</strong>
+                    9942
+
+                    <br><br>
+
+                    <strong>Result:</strong>
+
+                    <br>
+
+                    ${sessionData}
+                `
+
+            };
+
+
+        // =====================================
+        // L4 TRANSPORT
+        // =====================================
+
+        case 4:
+
+            const transportData =
+                `[TCP|Src:54321|Dst:443] ${data}`;
+
+            return {
+
+                payload: transportData,
+
+                explanation: `
+                    <strong>L4 — Transport Layer</strong>
+
+                    <br><br>
+
+                    <strong>What happened?</strong>
+
+                    <br>
+
+                    A TCP header was added to identify
+                    the source and destination applications.
+
+                    <br><br>
+
+                    <strong>How?</strong>
+
+                    <br>
+
+                    The simulator adds two port numbers:
+
+                    <br><br>
+
+                    Source Port:
+                    <strong>54321</strong>
+
+                    <br>
+
+                    Destination Port:
+                    <strong>443</strong>
+
+                    <br><br>
+
+                    Port 443 is commonly associated
+                    with HTTPS traffic.
+
+                    <br><br>
+
+                    <strong>Result:</strong>
+
+                    <br>
+
+                    ${transportData}
+                `
+
+            };
+
+
+        // =====================================
+        // L3 NETWORK
+        // =====================================
+
+        case 3:
+
+            const networkData =
+                `[IP|Src:192.168.1.5|Dst:104.21.73.112] ${data}`;
+
+            return {
+
+                payload: networkData,
+
+                explanation: `
+                    <strong>L3 — Network Layer</strong>
+
+                    <br><br>
+
+                    <strong>What happened?</strong>
+
+                    <br>
+
+                    IP addresses were added so the
+                    packet can be logically addressed
+                    and routed.
+
+                    <br><br>
+
+                    <strong>How?</strong>
+
+                    <br>
+
+                    Source IP:
+
+                    <strong>192.168.1.5</strong>
+
+                    <br>
+
+                    Destination IP:
+
+                    <strong>104.21.73.112</strong>
+
+                    <br><br>
+
+                    Routers use IP addressing to determine
+                    where packets should go.
+
+                    <br><br>
+
+                    <strong>Result:</strong>
+
+                    <br>
+
+                    ${networkData}
+                `
+
+            };
+
+
+        // =====================================
+        // L2 DATA LINK
+        // =====================================
+
+        case 2:
+
+            const dataLinkData =
+                `[MAC|Src:00:1A:2B...|Dst:F8:4D:89...] ${data} [FCS]`;
+
+            return {
+
+                payload: dataLinkData,
+
+                explanation: `
+                    <strong>L2 — Data Link Layer</strong>
+
+                    <br><br>
+
+                    <strong>What happened?</strong>
+
+                    <br>
+
+                    MAC addresses and an FCS field
+                    were added.
+
+                    <br><br>
+
+                    <strong>How?</strong>
+
+                    <br>
+
+                    Source MAC:
+
+                    <strong>00:1A:2B...</strong>
+
+                    <br>
+
+                    Destination MAC:
+
+                    <strong>F8:4D:89...</strong>
+
+                    <br><br>
+
+                    The FCS is used for error detection
+                    at the Data Link Layer.
+
+                    <br><br>
+
+                    The resulting data is now represented
+                    as a frame.
+
+                    <br><br>
+
+                    <strong>Result:</strong>
+
+                    <br>
+
+                    ${dataLinkData}
+                `
+
+            };
+
+
+        // =====================================
+        // L1 PHYSICAL
+        // =====================================
+
+        case 1:
+
+            const binaryData =
+                data
+                    .split('')
+                    .map(char =>
+                        char
+                            .charCodeAt(0)
+                            .toString(2)
+                            .padStart(8, '0')
+                    )
+                    .join(' ');
+
+            return {
+
+                payload: binaryData,
+
+                explanation: `
+                    <strong>L1 — Physical Layer</strong>
+
+                    <br><br>
+
+                    <strong>What happened?</strong>
+
+                    <br>
+
+                    The final data was converted
+                    into binary bits.
+
+                    <br><br>
+
+                    <strong>How?</strong>
+
+                    <br>
+
+                    Each character is converted into
+                    its character code and then represented
+                    using 8-bit binary.
+
+                    <br><br>
+
+                    <strong>Example:</strong>
+
+                    <br>
+
+                    Character:
+                    <strong>A</strong>
+
+                    <br>
+
+                    ASCII value:
+                    <strong>65</strong>
+
+                    <br>
+
+                    Binary:
+                    <strong>01000001</strong>
+
+                    <br><br>
+
+                    The physical layer ultimately transmits
+                    these bits as electrical signals,
+                    light signals, or radio waves.
+
+                    <br><br>
+
+                    <strong>Transmission Ready.</strong>
+                `
+
+            };
+
+    }
+
+}
+
+
+// =========================================
+// STEP BUTTON
+// =========================================
+
+encapStepBtn.addEventListener(
+    'click',
+    () => {
+
+        // Stop when finished
+
+        if (encapCurrentLayer < 1) {
+
+            return;
+
+        }
+
+
+        // First click
+
+        if (
+            encapCurrentLayer === 7 &&
+            !encapIsProcessing
+        ) {
+
+            encapCurrentPayload =
+                encapMessageInput.value.trim()
+                || "hello";
+
+            encapIsProcessing = true;
+
+            encapStepBtn.innerText =
+                "Step Down (Encapsulate)";
+
+        }
+
+
+        // Highlight current layer
+
+        highlightEncapLayer(
+            encapCurrentLayer
+        );
+
+
+        // Process layer
+
+        const result =
+            processEncapsulationLayer(
+                encapCurrentLayer,
+                encapCurrentPayload
+            );
+
+
+        // Update payload
+
+        encapCurrentPayload =
+            result.payload;
+
+
+        // Update packet display
+
+        encapPacketDisplay.innerText =
+            encapCurrentPayload;
+
+
+        // Update explanation
+
+        encapLayerDescription.innerHTML =
+            result.explanation;
+
+
+        // Move to next layer
+
+        encapCurrentLayer--;
+
+
+        // Finished
+
+        if (encapCurrentLayer === 0) {
+
+            encapStepBtn.innerText =
+                "Transmission Complete";
+
+            encapStepBtn.disabled = true;
+
+        }
+
+    }
+);
+
+
+// =========================================
+// RESET
+// =========================================
+
+encapResetBtn.addEventListener(
+    'click',
+    () => {
+
+        encapCurrentLayer = 7;
+
+        encapCurrentPayload = "";
+
+        encapIsProcessing = false;
+
+
+        encapMessageInput.value = "";
+
+
+        encapPacketDisplay.innerText =
+            "Awaiting data...";
+
+
+        encapLayerDescription.innerHTML =
+            "Start the simulator to see how each OSI layer processes the data.";
+
+
+        encapStepBtn.innerText =
+            "Start Encapsulation";
+
+
+        encapStepBtn.disabled = false;
+
+
+        getEncapLayers().forEach(layer => {
+
+            layer.classList.remove(
+                'encap-active'
+            );
+
+        });
+
+    }
+);
 </script>
 
 </body>
